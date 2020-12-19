@@ -1,0 +1,46 @@
+{
+  "name": "nextjs-express-prisma-typescript-eslint-boilerplate",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "check-types": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "check-format": "prettier --list-different .",
+    "validate": "npm-run-all --parallel check-types check-format lint && npm run build"
+  },
+  "prisma": {
+    "schema": "server/prisma/schema.prisma"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "helmet": "^4.2.0",
+    "next": "latest",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@prisma/cli": "^2.13.1",
+    "@types/express": "^4.17.9",
+    "@types/node": "^12.0.12",
+    "@types/react": "^16.9.44",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.10.0",
+    "@typescript-eslint/parser": "^4.10.0",
+    "eslint": "^7.15.0",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react": "^7.21.5",
+    "husky": "^4.3.6",
+    "lint-staged": "^10.5.3",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "2.2.1",
+    "ts-node": "^8.10.2",
+    "typescript": "4.0"
+  },
+  "license": "MIT"
+}
