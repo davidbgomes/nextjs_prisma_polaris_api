@@ -23,7 +23,9 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
-      "@/utils/*": ["utils/*"]
+      "@/utils/*": ["utils/*"],
+      "@/contexts/*": ["contexts/*"],
+      "@/styles/*": ["styles/*"]
     }
   },
   "exclude": ["dist", ".next", "out", "next.config.js"],
