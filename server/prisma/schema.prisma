@@ -6,3 +6,40 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model users {
+  id       Int    @id @default(autoincrement())
+  email    String @unique
+  password String
+}
+
+model customers {
+  id         Int      @id @default(autoincrement())
+  first_name String
+  last_name  String
+  email      String
+  gender     String
+  orders     orders[]
+}
+
+model orders {
+  id              Int               @id @default(autoincrement())
+  customer_id     Int               @default(autoincrement())
+  customers       customers         @relation(fields: [customer_id], references: [id])
+  orders_products orders_products[]
+}
+
+model orders_products {
+  id         Int      @id @default(autoincrement())
+  order_id   Int      @default(autoincrement())
+  product_id Int      @default(autoincrement())
+  orders     orders   @relation(fields: [order_id], references: [id])
+  products   products @relation(fields: [product_id], references: [id])
+}
+
+model products {
+  id              Int               @id @default(autoincrement())
+  name            String
+  price           Float
+  orders_products orders_products[]
+}

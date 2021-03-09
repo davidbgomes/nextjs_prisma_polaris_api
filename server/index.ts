@@ -7,7 +7,7 @@ import api from './api';
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();
-const port = parseInt(process.env.PORT || '3000', 10);
+const port = parseInt(process.env.PORT || '3001', 10);
 
 (async () => {
   try {
@@ -27,7 +27,7 @@ const port = parseInt(process.env.PORT || '3000', 10);
         if (err) throw err;
         // eslint-disable-next-line no-console
         console.log(
-          `> Server listening at http://localhost:${port} as ${
+          `> Prisma Server listening at http://localhost:${port} as ${
             dev ? 'development' : process.env.NODE_ENV
           }`,
         );

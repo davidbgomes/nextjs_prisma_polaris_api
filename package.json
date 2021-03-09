@@ -2,9 +2,10 @@
   "name": "nextjs-express-prisma-typescript-eslint-boilerplate",
   "version": "1.0.0",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "next dev",
+    "devStart": "nodemon server/api/index.ts",
     "build": "next build && tsc --project tsconfig.server.json",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "next start",
     "lint": "eslint . --ext .js,.ts,.tsx",
     "check-types": "tsc --pretty --noEmit",
     "format": "prettier --write .",
@@ -15,14 +16,21 @@
     "schema": "server/prisma/schema.prisma"
   },
   "dependencies": {
+    "@prisma/client": "^2.18.0",
     "@shopify/polaris": "^5.12.0",
     "@shopify/polaris-icons": "^4.1.0",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
     "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.2.0",
+    "jsonwebtoken": "^8.5.1",
     "next": "latest",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-hook-form": "^6.15.4",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@prisma/cli": "^2.13.1",
@@ -41,6 +49,7 @@
     "nodemon": "^2.0.4",
     "npm-run-all": "^4.1.5",
     "prettier": "2.2.1",
+    "prisma": "^2.18.0",
     "ts-node": "^8.10.2",
     "typescript": "4.0"
   },
